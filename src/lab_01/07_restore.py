@@ -1,4 +1,4 @@
-s=input()
+s=input('in:')
 first=0
 for i in range(len(s)):
     if s[i].isupper():
@@ -15,4 +15,4 @@ for i in range(first,len(s),shag):
     res+=s[i]
     if s[i]=='.':
         break
-print(res)
+print('out:',res)
