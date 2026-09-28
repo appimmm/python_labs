@@ -296,7 +296,7 @@ try:
     print(format_record(("Иванов Иван", "BIVT-25", "пять")))
 except TypeError as e:
     print(f"TypeError: {e}")
- try:
+try:
     print(format_record(("Иванов Иван", "BIVT-25", 3124212.0)))
 except ValueError as e:
     print(f"ValueError: {e}")
