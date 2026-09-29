@@ -241,7 +241,7 @@ except ValueError as e:
 
 ![Задание 2](images/lab_02/02_matrix.png)
 # Задание 3
-```
+```python
 def format_record(rec: tuple[str, str, float | int]) -> str:
     """
     Форматирует кортеж студента в строку вида "Фамилия И.О., гр. ГРУППА, GPA X.XX".
