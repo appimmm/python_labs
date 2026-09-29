@@ -44,7 +44,7 @@ print(f"{hours}:{minutes:02d}")
 s=input('ФИО: ')
 a=s.split()
 print(f'Инициалы: {a[0][0]+a[1][0]+a[2][0]}.')
-print(f'Длина (символов): {len(a[0])+len(a[1])+len(a[2])+2}') #+2 пробела между именем фамилией/ именем отчеством
+print(f'Длина (символов): {len(a[0])+len(a[1])+len(a[2])+2}')
 ```
 
 ![Задание 5](images/lab_01/05_initials_and_len.png)
