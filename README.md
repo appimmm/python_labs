@@ -92,6 +92,7 @@ print('out:',res)
 # Задание 1
 ```
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
+    """Возвращает кортеж (мин, макс). При пустом списке вызывает ValueError."""
     if not nums:
         raise ValueError
     
@@ -102,6 +103,7 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     return (min_val, max_val)
 
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
+    """Возвращает отсортированный по возрастанию список уникальных значений."""
     if not nums: return []
     result = []
     for item in nums:
@@ -115,6 +117,7 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
     return result
 
 def flatten(mat: list[list | tuple]) -> list:
+    """Делает из списка списков или кортежей плоский одномерный список."""
     flat_list = []
     for sublist in mat:
         if not isinstance(sublist, (list, tuple)):
