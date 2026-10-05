@@ -1,14 +1,14 @@
 # Лабораторная работа 1
 
 # Задание 1
-```
+```python
 name = input("Имя: ")
 age = int(input("Возраст: "))
 print("Привет, ", name, "! Через год тебе будет ", age + 1,'.',sep='')
 ```
 ![Задание 1](images/lab_01/01_greeting.png)
 # Задание 2
-```
+```python
 a=float(input('a: ').replace(',','.'))
 b=float(input('b: ').replace(',','.'))
 summa=a+b
@@ -17,7 +17,7 @@ print(f'sum={summa:.2f}; avg={sr:.2f}')
 ```
 ![Задание 2](images/lab_01/02_sum_avg.png)
 # Задание 3
-```
+```python
 price=float(input('price='))
 discount=float(input('discount='))
 vat=float(input('vat='))
@@ -30,7 +30,7 @@ print(f'Итого:             {total:.2f} ₽')
 ```
 ![Задание 3](images/lab_01/03_discount_vat.png)
 # Задание 4
-```
+```python
 m = int(input("Минуты: "))
 
 hours = m // 60
@@ -40,16 +40,16 @@ print(f"{hours}:{minutes:02d}")
 ```
 ![Задание 4](images/lab_01/04_minutes_to_hhmm.png)
 # Задание 5
-```
+```python
 s=input('ФИО: ')
 a=s.split()
 print(f'Инициалы: {a[0][0]+a[1][0]+a[2][0]}.')
-print(f'Длина (символов): {len(a[0])+len(a[1])+len(a[2])+2}') #+2 пробела между именем фамилией/ именем отчеством
+print(f'Длина (символов): {len(a[0])+len(a[1])+len(a[2])+2}')
 ```
 
 ![Задание 5](images/lab_01/05_initials_and_len.png)
 # Задание 6
-```
+```python
 n=int(input('in_1: '))
 o=0
 z=0
@@ -65,7 +65,7 @@ for i in range(n):
 ```
 ![Задание 6](images/lab_01/06_participants.png)
 # Задание 7
-```
+```python
 s=input('in:')
 first=0
 for i in range(len(s)):
@@ -90,8 +90,9 @@ print('out:',res)
 # Лабораторная работа 2
 
 # Задание 1
-```
+```python
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
+    """Возвращает кортеж (мин, макс). При пустом списке вызывает ValueError."""
     if not nums:
         raise ValueError
     
@@ -102,6 +103,7 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     return (min_val, max_val)
 
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
+    """Возвращает отсортированный по возрастанию список уникальных значений."""
     if not nums: return []
     result = []
     for item in nums:
@@ -115,6 +117,7 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
     return result
 
 def flatten(mat: list[list | tuple]) -> list:
+    """Делает из списка списков или кортежей плоский одномерный список."""
     flat_list = []
     for sublist in mat:
         if not isinstance(sublist, (list, tuple)):
@@ -152,7 +155,7 @@ except TypeError as e:
 ![Задание 1](images/lab_02/01_arrays.png)
 
 # Задание 2
-```
+```python
 def transpose(mat: list[list[float | int]]) -> list[list]:
     """
     Поменять строки и столбцы местами. Пустая матрица [] -> [].
@@ -238,7 +241,7 @@ except ValueError as e:
 
 ![Задание 2](images/lab_02/02_matrix.png)
 # Задание 3
-```
+```python
 def format_record(rec: tuple[str, str, float | int]) -> str:
     """
     Форматирует кортеж студента в строку вида "Фамилия И.О., гр. ГРУППА, GPA X.XX".
