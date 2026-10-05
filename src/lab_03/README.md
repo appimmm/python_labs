@@ -90,7 +90,7 @@ if __name__ == '__main__':
     print("Словарь 2:", count_freq(["bb", "aa", "bb", "aa", "cc"]))
     print("Топ-2 (проверка алфавита):", top_n(count_freq(["bb", "aa", "bb", "aa", "cc"]), n=2))
 ```
-![Задание 1](images/lab_03/01_A.png)
+![Задание A](/images/lab_03/01_A.png)
 # Задание 2
 ```python
 import sys
@@ -121,5 +121,5 @@ if __name__ == '__main__':
             for word, count in top_words:
                 print(f"{word:<{max_len}} | {count}")
 ```
-![Задание 2](images/lab_03/02_B.png)
-![Задание 2](images/lab_03/03_BB.png)
+![Задание B](/images/lab_03/02_B.png)
+![Задание B*](/images/lab_03/03_BB.png)
