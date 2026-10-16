@@ -1,5 +1,9 @@
 ## ЛР5 — JSON и конвертации
 ### Задание A — JSON ↔ CSV
+Устанавливает библиотеку openpyxl.
+```powershell
+python -m pip install -r requirements.txt
+```
 ```python
 import csv
 import json
@@ -105,15 +109,28 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 
     with json_path.open("w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
-```
 
+```
+Преобразует `people.json` в `people_from_json.csv`.
+
+```powershell
+python -c "from src.lab_05.json_csv import json_to_csv; json_to_csv('data/samples/people.json', 'data/out/people_from_json.csv')"
+```
 #### Результат JSON → CSV
+
+
 
 ![JSON → CSV](../../images/lab_05/json_to_csv.png)
 
+Преобразует `people.csv` в `people_from_csv.json`.
+
+```powershell
+python -c "from src.lab_05.json_csv import csv_to_json; csv_to_json('data/samples/people.csv', 'data/out/people_from_csv.json')"
+```
 #### Результат CSV → JSON
 
 ![CSV → JSON](../../images/lab_05/csv_to_json.png)
+
 ### Задание B — CSV → XLSX
 ```python
 import csv
@@ -197,5 +214,10 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
             255, max(8, max_length + 2))
     workbook.save(xlsx_path)
     workbook.close()
+```
+Создаёт Excel-файл `people.xlsx` из `people.csv`.
+
+```powershell
+python -c "from src.lab_05.csv_xlsx import csv_to_xlsx; csv_to_xlsx('data/samples/people.csv', 'data/out/people.xlsx')"
 ```
 ![CSV → XLSX](../../images/lab_05/people_xlsx.png)

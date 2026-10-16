@@ -7,13 +7,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from lib.text import normalize, tokenize, count_freq, top_n
 from lab_04.io_txt_csv import read_text, write_csv
+
+
 def frequencies_from_text(text: str) -> dict[str, int]:
     """Нормализует текст и считает частоты слов."""
     tokens = tokenize(normalize(text))
     return count_freq(tokens)
+
+
 def sorted_word_counts(freq: dict[str, int]) -> list[tuple[str, int]]:
     """Сортирует слова по частоте, затем по алфавиту."""
     return sorted(freq.items(), key=lambda item: (-item[1], item[0]))
+
+
 def print_table(freq: dict[str, int]) -> None:
     """Выводит таблицу с подходящей шириной столбцов."""
     rows = sorted_word_counts(freq)
@@ -26,6 +32,8 @@ def print_table(freq: dict[str, int]) -> None:
 
     for word, count in rows:
         print(f"{word:<{word_width}} | {count:<{count_width}}")
+
+
 def print_summary(freq: dict[str, int]) -> None:
     """Выводит статистику, топ-5 и таблицу."""
     print(f"Всего слов: {sum(freq.values())}")
@@ -36,6 +44,8 @@ def print_summary(freq: dict[str, int]) -> None:
         print(f"{word}:{count}")
 
     print_table(freq)
+
+
 def process_single_file(input_path: str, output_path: str, encoding: str) -> None:
     """Создаёт CSV-отчёт по одному файлу."""
     text = read_text(input_path, encoding=encoding)
@@ -49,7 +59,14 @@ def process_single_file(input_path: str, output_path: str, encoding: str) -> Non
 
     print_summary(freq)
     print(f"Отчёт сохранён: {output_path}")
-def process_multiple_files(input_paths: list[str],per_file_path: str,total_path: str,encoding: str) -> None:
+
+
+def process_multiple_files(
+    input_paths: list[str],
+    per_file_path: str,
+    total_path: str,
+    encoding: str
+) -> None:
     """Создаёт отчёт по каждому файлу и общий отчёт."""
     per_file_rows = []
     total_freq = Counter()
@@ -59,7 +76,6 @@ def process_multiple_files(input_paths: list[str],per_file_path: str,total_path:
         freq = frequencies_from_text(text)
 
         total_freq.update(freq)
-
         filename = Path(input_path).name
 
         for word, count in sorted_word_counts(freq):
@@ -82,6 +98,8 @@ def process_multiple_files(input_paths: list[str],per_file_path: str,total_path:
     print_summary(total_freq)
     print(f"Отчёт по файлам: {per_file_path}")
     print(f"Сводный отчёт: {total_path}")
+
+
 def main() -> None:
     """Обрабатывает аргументы командной строки."""
     parser = argparse.ArgumentParser(description="Отчёт по частоте слов")
@@ -90,7 +108,7 @@ def main() -> None:
         "--in",
         dest="inputs",
         nargs="+",
-        default=["data/lab04/input.txt"]
+        default=["data/lab_04/input.txt"]
     )
     parser.add_argument("--out", default="data/lab_04/report.csv")
     parser.add_argument("--per-file", default="data/lab_04/report_per_file.csv")
@@ -112,5 +130,7 @@ def main() -> None:
     except (FileNotFoundError, UnicodeDecodeError) as error:
         print(f"Ошибка чтения файла: {error}", file=sys.stderr)
         sys.exit(1)
+
+
 if __name__ == "__main__":
     main()

@@ -1,17 +1,19 @@
 import csv
 from pathlib import Path
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
-    """Читает текстовый файл в указанной кодировке."""
+    """Читает текст. Для другой кодировки укажите encoding="cp1251"."""
     p = Path(path)
     return p.read_text(encoding=encoding)
-
 def ensure_parent_dir(path: str | Path) -> None:
     """Создаёт родительские папки, если они отсутствуют."""
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
-
-def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
-    """Записывает строки в CSV и проверяет их длину."""
+def write_csv(
+    rows: list[tuple | list],
+    path: str | Path,
+    header: tuple[str, ...] | None = None
+) -> None:
+    """Записывает CSV и проверяет одинаковую длину строк."""
     if rows:
         expected_length = len(rows[0])
 
@@ -31,15 +33,12 @@ def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...
             writer.writerow(header)
 
         writer.writerows(rows)
-
-
 if __name__ == "__main__":
-    text = read_text("data/lab_04/input.txt")
+    txt = read_text("data/lab04/input.txt")
     print("Прочитанный текст:")
-    print(text)
+    print(txt)
 
-    write_csv([("привет", 2), ("мир", 1)],
-            "data/lab04/check.csv",
-            header=("word", "count"))
-
-    print("CSV-файл успешно создан!")
+    write_csv(
+        [("word", "count"), ("test", 3)],
+        "data/lab04/check.csv"
+    )
