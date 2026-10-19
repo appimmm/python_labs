@@ -52,8 +52,9 @@ if __name__ == "__main__":
     print(txt)
 
     write_csv(
-        [("word", "count"), ("привет", 2), ("мир", 1)],
-        "data/lab_04/check.csv")
+        [("word", "count"), ("test", 3)],
+        "data/lab_04/check.csv"
+    )
     print("CSV создан: data/lab_04/check.csv")
 ```
 ![Задание A](../../images/lab_04/01.png)
