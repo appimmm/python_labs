@@ -39,6 +39,6 @@ if __name__ == "__main__":
     print(txt)
 
     write_csv(
-        [("word", "count"), ("test", 3)],
+        [("word", "count"), ("привет", 2), ("мир", 1)],
         "data/lab_04/check.csv"
     )

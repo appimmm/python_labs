@@ -128,7 +128,7 @@ def main() -> None:
                 args.encoding
             )
     except (FileNotFoundError, UnicodeDecodeError) as error:
-        print(f"Ошибка чтения файла: {error}", file=sys.stderr)
+        print(f"Ошибка чтения файла: {error}")
         sys.exit(1)
 
 
