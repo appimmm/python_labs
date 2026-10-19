@@ -34,11 +34,11 @@ def write_csv(
 
         writer.writerows(rows)
 if __name__ == "__main__":
-    txt = read_text("data/lab04/input.txt")
+    txt = read_text("data/lab_04/input.txt", encoding="cp1251")
     print("Прочитанный текст:")
     print(txt)
 
     write_csv(
         [("word", "count"), ("test", 3)],
-        "data/lab04/check.csv"
+        "data/lab_04/check.csv"
     )
