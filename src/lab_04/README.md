@@ -168,12 +168,7 @@ def main() -> None:
     """Обрабатывает аргументы командной строки."""
     parser = argparse.ArgumentParser(description="Отчёт по частоте слов")
 
-    parser.add_argument(
-        "--in",
-        dest="inputs",
-        nargs="+",
-        default=["data/lab_04/input.txt"]
-    )
+    parser.add_argument("--in",dest="inputs",nargs="+",default=["data/lab_04/input.txt"])
     parser.add_argument("--out", default="data/lab_04/report.csv")
     parser.add_argument("--per-file", default="data/lab_04/report_per_file.csv")
     parser.add_argument("--total", default="data/lab_04/report_total.csv")
