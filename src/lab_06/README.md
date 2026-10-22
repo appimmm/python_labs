@@ -96,7 +96,7 @@ python -m src.lab_06.cli_text cat --input data/samples/people.csv -n
 python -m src.lab_06.cli_text cat --help
 ```
 
-![Справка cat](../../images/lab_06/help_cat.png)
+![Справка cat](../../images/lab_06/cat_help.png)
 
 ### Команда stats — анализ частот слов
 
@@ -114,7 +114,7 @@ python -m src.lab_06.cli_text stats --input data/samples/people.txt --top 5
 python -m src.lab_06.cli_text stats --help
 ```
 
-![Справка stats](../../images/lab_06/help_stats.png)
+![Справка stats](../../images/lab_06/stats_help.png)
 
 ## Задание 2 — Конвертация файлов
 
@@ -225,7 +225,7 @@ python -m src.lab_06.cli_convert json2csv --in data/samples/people.json --out da
 python -m src.lab_06.cli_convert json2csv --help
 ```
 
-![Справка json2csv](../../images/lab_06/help_json2csv.png)
+![Справка json2csv](../../images/lab_06/json2csv_help.png)
 
 ### Команда csv2json — CSV → JSON
 
@@ -245,7 +245,7 @@ python -m src.lab_06.cli_convert csv2json --in data/samples/people.csv --out dat
 python -m src.lab_06.cli_convert csv2json --help
 ```
 
-![Справка csv2json](../../images/lab_06/help_csv2json.png)
+![Справка csv2json](../../images/lab_06/csv2json_help.png)
 
 ### Команда csv2xlsx — CSV → XLSX
 
@@ -265,26 +265,7 @@ python -m src.lab_06.cli_convert csv2xlsx --in data/samples/people.csv --out dat
 python -m src.lab_06.cli_convert csv2xlsx --help
 ```
 
-![Справка csv2xlsx](../../images/lab_06/help_csv2xlsx.png)
-
-## Параметры и запуск
-
-Все команды выполняются из корня PYTHON_LABS.
-Папка data/out должна существовать. Кодировка текстовых файлов — UTF-8.
-
-| Параметр | Назначение |
-|---|---|
-| `--input` | Обязательный путь к файлу для cat и stats |
-| `-n` | Включает нумерацию строк в cat |
-| `--top` | Количество слов в stats; положительное целое число, по умолчанию 5 |
-| `--in` | Обязательный путь к исходному файлу конвертации |
-| `--out` | Обязательный путь к файлу результата |
-| `--help` | Показывает справку и завершает работу |
-
-Анализ текста использует функции ЛР3 из src/lib/text.py.
-Конвертеры вызывают функции ЛР5.
-Для создания XLSX требуется установленная зависимость openpyxl из ЛР5.
-
+![Справка csv2xlsx](../../images/lab_06/csv2xlsx_help.png)
 ## Проверка ошибок
 
 ### Неверное значение --top
