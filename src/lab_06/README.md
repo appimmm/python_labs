@@ -92,7 +92,8 @@ python -m src.lab_06.cli_text cat --input data/samples/people.csv -n
 python -m src.lab_06.cli_text cat --help
 ```
 
-![Справка cat](../../images/lab_06/help_cat.png)
+![Справка cat](../../images/lab_06/cat_help.png)
+<br><br><br><br>
 
 ### Команда stats
 
@@ -218,6 +219,7 @@ python -m src.lab_06.cli_convert json2csv --help
 ```
 
 ![Справка json2csv](../../images/lab_06/json2csv_help.png)
+<br><br><br><br>
 
 ### Команда csv2json — CSV → JSON
 
@@ -236,6 +238,8 @@ python -m src.lab_06.cli_convert csv2json --help
 ```
 
 ![Справка csv2json](../../images/lab_06/csv2json_help.png)
+
+<br><br><br><br>
 
 ### Команда csv2xlsx — CSV → XLSX
 
@@ -259,7 +263,7 @@ python -m src.lab_06.cli_convert csv2xlsx --help
 ### Неверное значение --top
 
 ```powershell
-python -m src.lab_06.cli_text stats --input data/samples/people.txt --top 0
+python -m src.lab_06.cli_text stts --input data/samples/people.txt --top 0
 ```
 
 
