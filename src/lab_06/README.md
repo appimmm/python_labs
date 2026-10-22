@@ -262,10 +262,6 @@ python -m src.lab_06.cli_convert csv2xlsx --help
 python -m src.lab_06.cli_text stats --input data/samples/people.txt --top 0
 ```
 
-Ожидаемый результат: сообщение argparse
-«--top должен быть положительным числом».
-
-Полученный результат соответствует ожидаемому.
 
 ![Ошибка аргумента top](../../images/lab_06/error_top.png)
 
@@ -274,10 +270,5 @@ python -m src.lab_06.cli_text stats --input data/samples/people.txt --top 0
 ```powershell
 python -m src.lab_06.cli_text cat --input data/samples/missing.txt
 ```
-
-Ожидаемый результат: FileNotFoundError с сообщением
-«Файл не найден».
-
-Полученный результат соответствует ожидаемому.
 
 ![Ошибка отсутствующего файла](../../images/lab_06/error_missing.png)
