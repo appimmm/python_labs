@@ -80,35 +80,30 @@ if __name__ == "__main__":
     main()
 ```
 
-### Команда cat — вывод файла с нумерацией
-
+### Команда cat
 ```powershell
 python -m src.lab_06.cli_text cat --input data/samples/people.csv -n
 ```
-
-#### Результат
-
 ![Вывод cat](../../images/lab_06/cat.png)
 
-#### Справка cat
+#### Справка 
 
 ```powershell
 python -m src.lab_06.cli_text cat --help
 ```
 
-![Справка cat](../../images/lab_06/cat_help.png)
+![Справка cat](../../images/lab_06/help_cat.png)
 
-### Команда stats — анализ частот слов
+### Команда stats
 
 ```powershell
 python -m src.lab_06.cli_text stats --input data/samples/people.txt --top 5
 ```
 
-#### Результат
 
 ![Вывод stats](../../images/lab_06/stats.png)
 
-#### Справка stats
+#### Справка 
 
 ```powershell
 python -m src.lab_06.cli_text stats --help
@@ -118,7 +113,6 @@ python -m src.lab_06.cli_text stats --help
 
 ## Задание 2 — Конвертация файлов
 
-### Скрипт cli_convert.py
 
 ```python
 import argparse
@@ -207,17 +201,15 @@ if __name__ == "__main__":
     main()
 ```
 
-### Команда json2csv — JSON → CSV
+### Команда json2csv
 
 ```powershell
 python -m src.lab_06.cli_convert json2csv --in data/samples/people.json --out data/out/people_from_json.csv
 ```
 
-#### Результат
 
 ![Вывод json2csv](../../images/lab_06/json2csv.png)
 
-[Полученный CSV-файл](../../data/out/people_from_json.csv)
 
 #### Справка json2csv
 
@@ -233,11 +225,9 @@ python -m src.lab_06.cli_convert json2csv --help
 python -m src.lab_06.cli_convert csv2json --in data/samples/people.csv --out data/out/people_from_csv.json
 ```
 
-#### Результат
 
 ![Вывод csv2json](../../images/lab_06/csv2json.png)
 
-[Полученный JSON-файл](../../data/out/people_from_csv.json)
 
 #### Справка csv2json
 
@@ -253,11 +243,9 @@ python -m src.lab_06.cli_convert csv2json --help
 python -m src.lab_06.cli_convert csv2xlsx --in data/samples/people.csv --out data/out/people.xlsx
 ```
 
-#### Результат
 
 ![Вывод csv2xlsx](../../images/lab_06/csv2xlsx.png)
 
-[Полученный XLSX-файл](../../data/out/people.xlsx)
 
 #### Справка csv2xlsx
 
