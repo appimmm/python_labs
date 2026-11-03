@@ -274,5 +274,3 @@ python -m src.lab_06.cli_text stts --input data/samples/people.txt --top 0
 ```powershell
 python -m src.lab_06.cli_text cat --input data/samples/missing.txt
 ```
-
-![Ошибка отсутствующего файла](../../images/lab_06/error_missing.png)
