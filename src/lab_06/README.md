@@ -270,6 +270,7 @@ python -m src.lab_06.cli_text stts --input data/samples/people.txt --top 0
 ![Ошибка аргумента top](../../images/lab_06/error_top.png)
 
 ### Отсутствующий входной файл
+![Ошибка отсутствующего файла](../../images/lab_06/error_missing.png)
 
 ```powershell
 python -m src.lab_06.cli_text cat --input data/samples/missing.txt
