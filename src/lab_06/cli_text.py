@@ -59,7 +59,6 @@ def main():
                     print(f"{number}: ", end="")
 
                 print(line, end="")
-
     elif args.command == "stats":
         with path.open(encoding="utf-8") as file:
             text = file.read()
