@@ -1,5 +1,7 @@
 def bubble_sort(nums) -> list:
-    """Новый отсортированный список; исходный список не изменяется."""
+    """Сортирует пузырьком, не изменяя исходный список.
+    Если за проход не было обменов, завершает работу досрочно.
+    """
     nums = list(nums)
     for end in range(len(nums) - 1, 0, -1):
         swapped = False
@@ -11,8 +13,9 @@ def bubble_sort(nums) -> list:
             break
     return nums
 
+
 def insertion_sort(nums) -> list:
-    """Новый отсортированный список методом вставок."""
+    """Сортирует вставками, возвращая новый список."""
     nums = list(nums)
     for i in range(1, len(nums)):
         value = nums[i]
@@ -24,7 +27,7 @@ def insertion_sort(nums) -> list:
     return nums
 
 def selection_sort(nums) -> list:
-    """Новый отсортированный список методом выбора."""
+    """Сортирует выбором, возвращая новый список."""
     nums = list(nums)
     for i in range(len(nums) - 1):
         smallest = i
