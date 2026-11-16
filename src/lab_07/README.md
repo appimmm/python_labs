@@ -58,16 +58,14 @@ def bubble_sort(nums) -> list:
     """Сортирует пузырьком, не изменяя исходный список.
     Если за проход не было обменов, завершает работу досрочно.
     """
-    nums = list(nums)
-    for end in range(len(nums) - 1, 0, -1):
+    for _ in range(len(nums) - 1):
         swapped = False
-        for i in range(end):
+        for i in range(len(nums) - 1):
             if nums[i] > nums[i + 1]:
                 nums[i], nums[i + 1] = nums[i + 1], nums[i]
                 swapped = True
         if not swapped:
             break
-    return nums
 
 
 def insertion_sort(nums) -> list:
