@@ -259,6 +259,7 @@ import timeit
 from src.lab_04.io_txt_csv import write_csv
 from src.lab_07.search import linear_search, binary_search, two_sum_brute, two_sum_fast
 from src.lab_07.sorting import bubble_sort, insertion_sort, selection_sort
+
 ROOT = Path(__file__).resolve().parents[2]
 CSV_PATH = ROOT / "data" / "lab07" / "bench.csv"
 TIME_LIMIT = 60
@@ -299,23 +300,11 @@ def timed_sort(fn, data):
         process.join()
         receiver.close()
 
-def bench_counting(rows):
-    """Сравнивает sorted и counting_sort на диапазоне -100…100."""
-    for n in (1_000, 10_000, 100_000):
-        lo, hi = -100, 100
-        data = [random.randint(lo, hi) for _ in range(n)]
-        seconds = timeit.timeit(lambda: sorted(data), number=10) / 10
-        save_result(rows, "sort_small_range", n, "sorted", seconds)
-        seconds = timeit.timeit(lambda: counting_sort(data, lo, hi), number=10) / 10
-        save_result(rows, "sort_small_range", n, "counting_sort", seconds)
-
 def save_result(rows, task, n, impl, seconds):
     """Выводит результат и сохраняет CSV."""
     value = f"{seconds:.9f}" if isinstance(seconds, float) else seconds
     rows.append((task, n, impl, value))
-    names = {"sort": "Сортировка", "search_prepare": "Подготовка поиска", "search": "Поиск: 10 000 запросов", "two_sum": "Two Sum", "sort_small_range": "Сортировка [-100; 100]"}
-    duration = f"{seconds:.6f} с" if isinstance(seconds, float) else seconds
-    print(f"{names[task]:<24} | {n:>7} | {impl:<16} | {duration:>14}", flush=True)
+    print(f"{task:<18}  {n:>8}  {impl:<20}  {value:>16}", flush=True)
     CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
     write_csv(rows, CSV_PATH, header=("task", "n", "impl", "seconds"))
 
@@ -356,14 +345,6 @@ def bench_two_sum(rows):
         for fn in (two_sum_brute, two_sum_fast):
             seconds = timeit.timeit(lambda: fn(data, target), number=1)
             save_result(rows, "two_sum", n, fn.__name__, seconds)
-
-def save_result(rows, task, n, impl, seconds):
-    """Выводит результат и сохраняет CSV."""
-    value = f"{seconds:.9f}" if isinstance(seconds, float) else seconds
-    rows.append((task, n, impl, value))
-    print(f"{task:<18}  {n:>8}  {impl:<20}  {value:>16}", flush=True)
-    CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
-    write_csv(rows, CSV_PATH, header=("task", "n", "impl", "seconds"))
 
 def main():
     """Запускает обязательные замеры."""
