@@ -66,6 +66,7 @@ def bubble_sort(nums) -> list:
                 swapped = True
         if not swapped:
             break
+    return nums
 
 
 def insertion_sort(nums) -> list:
